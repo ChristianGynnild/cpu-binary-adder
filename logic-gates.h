@@ -1,0 +1,1 @@
+bool xor(bool a, bool b);
