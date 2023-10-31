@@ -21,7 +21,7 @@ void adder(bool a[8], bool b[8], bool output[8]){
     for (int i = 0; i < 8; ++i){
 
         output[i] = xor(xor(a[i], b[i]), carry);
-        carry = (a[i] & b[i]) | (a[i] & carry) | (b[i] & carry);
+        carry = (a[i] & b[i]) | ((b[i] | a[i]) & carry); // Can also be switched to : ... | ((xor(b[i], a[i])) & carry);
     }
 
     if (carry){
